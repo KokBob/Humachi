@@ -43,25 +43,25 @@ class rege(object):
         local_dct[ 'df'] = self.df
         # self.L = L
         return self.df
-    def plot_sheet_mass(self, sheet_name):
-        # plt.figure()
+    def plot_sheet_mass(self, sheet_name, separated_graphs = False):
+        if separated_graphs: plt.figure()
         x, y = self.dct[sheet_name]['cw'], self.dct[sheet_name]['m']
         plt.plot(x,y, label = sheet_name)
         plt.scatter(x,y, label = sheet_name)
         plt.legend()    
-    def full_test(self):
+    def full_test(self, **kargs):
         self.__init__()
         for _ in self.xls_sheets:
             print(_)
             try:
                 r.compile_sheet(_)
-                r.plot_sheet_mass(_)
+                r.plot_sheet_mass(_, **kargs)
             except: pass
         rd = r.dct
 
 
 r = rege() 
-r.full_test()
+r.full_test(separated_graphs=False)
 # %%
 # sheet_name = 'BINO'
 # r.compile_sheet(sheet_name)
