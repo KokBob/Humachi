@@ -3,8 +3,8 @@ Here is a simple flow chart:
 
 ```mermaid
 graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
+    TRN-->DS;
+    FTI-->DS;
+    KLT-->DS;
     C-->D;
 ```
